@@ -3,6 +3,10 @@ SITENAME = 'Gonzalo Rubio-Casas'
 SITEURL = ""
 
 PATH = "content"
+STATIC_PATHS = ['favicon.ico']  # Include your favicon file path
+EXTRA_PATH_METADATA = {
+    'favicon.ico': {'path': 'favicon.ico'},  # Ensures it appears in the root of the output
+}
 
 TIMEZONE = 'Europe/Madrid'
 
@@ -25,7 +29,7 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
+    ("gzrubio", "https://github.com/gzrubio/"),
     ("Another social link", "#"),
 )
 
@@ -33,3 +37,14 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
+
+ANALYTICS = """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2Q3911H0V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L2Q3911H0V');
+    </script>
+"""
