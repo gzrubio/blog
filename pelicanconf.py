@@ -3,9 +3,9 @@ SITENAME = 'Gonzalo Rubio-Casas'
 SITEURL = ""
 
 PATH = "content"
-STATIC_PATHS = ['favicon.ico']  # Include your favicon file path
+STATIC_PATHS = ['images']
 EXTRA_PATH_METADATA = {
-    'favicon.ico': {'path': 'favicon.ico'},  # Ensures it appears in the root of the output
+    'favicon.ico': {'path': 'content/images/favicon.ico'},
 }
 
 TIMEZONE = 'Europe/Madrid'
