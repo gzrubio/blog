@@ -1,10 +1,6 @@
-Title: About  
-Date: 2025-01-28  
-Category: About  
-Tags: personal, branding, bio  
+Title: About
 Slug: about 
-Authors: Gonzalo Rubio-Casas  
-Summary: Learn more about Gonzalo Rubio-Casas, his journey, passions, and philosophy.  
+Language: en
 
 # About Me  
 
