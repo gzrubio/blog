@@ -1,4 +1,4 @@
-name: Code Linting
+name: linting
 
 on: 
   push:  # Runs on every push to any branch

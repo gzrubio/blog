@@ -1,7 +1,10 @@
-name: Run Command & Deploy Directory
+name: Build & Deploy Pelican Site
 
 on: 
-  push:  # Runs on every push
+  workflow_run:
+    workflows: ["linting"]
+    types:
+      - completed
 
 jobs:
   build-and-deploy:
