@@ -1,0 +1,45 @@
+name: Run Command & Deploy Directory
+
+on: 
+  push:  # Runs on every push
+
+jobs:
+  build-and-deploy:
+    name: Run Command & Push to Another Repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python (or any dependencies)
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Adjust based on your needs
+
+      - name: Install Pelican & Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || echo "No additional requirements"
+
+      - name: Generate Pelican Static Files
+        run: |
+          pelican content -o output -s pelicanconf.py
+
+      - name: Set up SSH for Pushing to Another Repo
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Push content directory into the GH Pages repo
+        run: |
+          git clone git@github.com:gzrubio/gzrubio.github.io.git tmp_repo
+          cp -r output/* tmp_repo/
+          cd tmp_repo
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Automated update from GitHub Actions" || echo "No changes to commit"
+          git push origin main 
