@@ -10,6 +10,8 @@ EXTRA_PATH_METADATA = {
 
 TIMEZONE = 'Europe/Madrid'
 
+THEME = "themes/my-theme"
+
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
