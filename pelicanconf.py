@@ -11,6 +11,7 @@ EXTRA_PATH_METADATA = {
 TIMEZONE = 'Europe/Madrid'
 
 THEME = "themes/my-theme"
+STYLESHEET_URL = 'theme/css/style.css'
 
 DEFAULT_LANG = 'en'
 
