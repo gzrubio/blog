@@ -1,6 +1,6 @@
 AUTHOR = 'Gonzalo Rubio-Casas'
 SITENAME = 'Gonzalo Rubio-Casas'
-SITEURL = ""
+SITEURL = "http://localhost:8000"
 
 PATH = "content"
 STATIC_PATHS = ['images']

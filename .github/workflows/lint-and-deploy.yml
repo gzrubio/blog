@@ -32,7 +32,7 @@ jobs:
 
       - name: Generate Pelican Static Files
         run: |
-          pelican content -o output -s pelicanconf.py
+          pelican content -o output -s publishconf.py
 
       - name: Set up SSH for Pushing to Another Repo
         run: |
