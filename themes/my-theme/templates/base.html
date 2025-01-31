@@ -22,9 +22,6 @@
       {% if STYLESHEET_URL %}
         <link rel="stylesheet" type="text/css" href="{{ STYLESHEET_URL }}" />
       {% endif %}
-      {% for lib in EXTERNAL_LIBS %}
-        <link rel="{{ lib.rel }}" href="{{ lib.url }}">
-      {% endfor %}
     {% endblock head %}
   </head>
 
@@ -59,9 +56,9 @@
         <div class="social-links">
           <ul>
           {% for social in SOCIALS %}
-          <li>
+          <li type="none">
             <a href="{{ social.url }}" class="social-link">
-              <i class="fas fa-{{ social.icon }}"></i>
+              <img src="{{ SITEURL }}/theme/images/icons/{{ social.name }}.svg" alt="{{ social.name }}">
               <span>{{ social.text }}</span>
             </a>
           </li>

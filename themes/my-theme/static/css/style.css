@@ -63,11 +63,7 @@
 
 .social-link:hover {
     color: #666;
-}
-
-.social-link i {
-    width: 20px;
-    color: #666;
+    text-decoration: underline;
 }
 
 .footer-bio {
