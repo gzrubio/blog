@@ -12,6 +12,9 @@ TIMEZONE = 'Europe/Madrid'
 
 THEME = "themes/my-theme"
 STYLESHEET_URL = 'theme/css/style.css'
+EXTERNAL_LIBS = [
+    {"rel": "stylesheet", "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"}
+]
 
 DEFAULT_LANG = 'en'
 
@@ -31,10 +34,10 @@ LINKS = (
 )
 
 # Social widget
-SOCIAL = (
-    ("gzrubio", "https://github.com/gzrubio/"),
-    ("Another social link", "#"),
-)
+SOCIALS = [
+    {"url": "https://github.com/gzrubio/", "icon": "github", "text": "gzrubio"},
+    {"url": "https://www.linkedin.com/in/gonzalo-rubio-casas/", "icon": "linkedin", "text": "gonzalo.rubio.casas"}
+]
 
 DEFAULT_PAGINATION = 10
 

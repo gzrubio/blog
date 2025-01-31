@@ -22,6 +22,9 @@
       {% if STYLESHEET_URL %}
         <link rel="stylesheet" type="text/css" href="{{ STYLESHEET_URL }}" />
       {% endif %}
+      {% for lib in EXTERNAL_LIBS %}
+        <link rel="{{ lib.rel }}" href="{{ lib.url }}">
+      {% endfor %}
     {% endblock head %}
   </head>
 
@@ -51,11 +54,23 @@
         {% endblock content %}
       </main>
       <footer>
+        <hr>
         {% block footer %}
-          <address>
-            Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
-            which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
-          </address>
+        <div class="social-links">
+          <ul>
+          {% for social in SOCIALS %}
+          <li>
+            <a href="{{ social.url }}" class="social-link">
+              <i class="fas fa-{{ social.icon }}"></i>
+              <span>{{ social.text }}</span>
+            </a>
+          </li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="footer-bio">
+          <p>Fancy bio</p>
+        </div>
         {% endblock footer %}
       </footer>
     {% endblock body %}
